@@ -10,15 +10,19 @@ body {
 
 
 
+#main-content {
+    background-color: white;
+    margin: auto;
+    max-width: 52em;
+    padding: 1em;
+    border-radius: 0.25em;
+}
+
+
 #books-view {
     display: grid;
     grid-template-columns: repeat(auto-fill, 10em);
     grid-gap: 0.5em;
-    background-color: white;
-    max-width: 52em;
-    margin: auto;
-    padding: 1em;
-    border-radius: 0.25em;
     justify-content: center;
 }
 
