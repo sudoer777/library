@@ -1,4 +1,49 @@
+body {
+    font-family: sans-serif;
+    display: block;
+    position: relative;
+    justify-content: center;
+    background: skyblue;
+}
+
+
+
+
+
 #books-view {
     display: grid;
     grid-template-columns: repeat(auto-fill, 10em);
+    grid-gap: 0.5em;
+    background-color: white;
+    max-width: 52em;
+    margin: auto;
+    padding: 1em;
+    border-radius: 0.25em;
+    justify-content: center;
+}
+
+
+.book-display {
+    display: block;
+    word-wrap: break-word;
+    padding: 0.5em;
+    border: 0.05em black solid;
+    border-radius: 0.25em;
+    background-color: whitesmoke;
+}
+
+.book-read {
+    border-color: green;
+    background-color: #E5FFE5;
+}
+
+.book-display-title {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.25em;
+}
+
+.book-display-pages {
+    font-weight: lighter;
+    float: right;
 }
