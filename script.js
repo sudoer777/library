@@ -35,7 +35,7 @@ function refreshBooksView() {
 
         let bookDisplayPages = document.createElement('span');
         bookDisplayPages.classList.add("book-display-pages");
-        bookDisplayPages.textContent = book.pages;
+        bookDisplayPages.textContent = book.pages + (book.pages != 1?" pgs":" pg");
         bookDisplay.appendChild(bookDisplayPages);
 
         if(book.read) bookDisplay.classList.add("book-read");
