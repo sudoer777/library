@@ -16,6 +16,7 @@ body {
     max-width: 52em;
     padding: 1em;
     border-radius: 0.25em;
+    justify-content: right;
 }
 
 
@@ -50,4 +51,26 @@ body {
 .book-display-pages {
     font-weight: lighter;
     float: right;
+}
+
+
+#new-book-button-container {
+    text-align: right;
+}
+
+#new-book-button {
+    background-color: #76d1ff;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.25em;
+}
+
+#new-book-button:hover {
+    background-color: #2689bb;
+    color: white;
+}
+
+#new-book-button:active {
+    background-color: #76d1ff;
+    color: black;
 }
