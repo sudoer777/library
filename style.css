@@ -82,3 +82,52 @@ body {
     border-radius: 0.25em;
     padding: 0.5em;
 }
+
+
+
+#new-book-form {
+    width: 20em;
+    margin: 0 auto;
+    border: .05em black solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+}
+
+#new-book-form input {
+    display: block;
+    padding: 0.25em;
+    width: calc(100% - 0.5em);
+    margin: 0.5em 0;
+    background: #c1eaff;
+    border: 0.05em black solid;
+}
+
+#new-book-form input:hover {
+    background-color: black;
+    color: white;
+}
+
+#has-read input {
+    width: 1em !important;
+    display: inline;
+}
+
+#has-read {
+    border: 0.05em black solid;
+    padding: 0.25em;
+    border-radius: 0.1em;
+}
+
+#has-read:hover {
+    background-color: black;
+    color: white;
+}
+
+#has-read:active {
+    background-color: white;
+    color: black;
+}
+
+#submit {
+    width: 100% !important;
+}
