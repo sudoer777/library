@@ -1,6 +1,6 @@
 let myLibrary = [];
 
-let booksView = document.getElementById("books-view");
+const booksView = document.getElementById("books-view");
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -42,4 +42,16 @@ function refreshBooksView() {
 
         booksView.appendChild(bookDisplay);
     });
+}
+
+
+
+const newBookButton = document.getElementById("new-book-button");
+newBookButton.addEventListener('click', showNewBookForm);
+
+const newBookForm = document.getElementById("new-book-form");
+
+function showNewBookForm(e) {
+    if(newBookForm.style.display) newBookForm.style.display = "";
+    else newBookForm.style.display = "block";
 }
