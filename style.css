@@ -86,6 +86,7 @@ body {
 
 
 #new-book-form {
+    display: none;
     width: 20em;
     margin: 0 auto;
     border: .05em black solid;
