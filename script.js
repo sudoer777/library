@@ -14,6 +14,7 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
+    refreshBooksView();
 }
 
 function refreshBooksView() {
@@ -47,11 +48,43 @@ function refreshBooksView() {
 
 
 const newBookButton = document.getElementById("new-book-button");
-newBookButton.addEventListener('click', showNewBookForm);
+newBookButton.addEventListener('click', toggleNewBookForm);
 
 const newBookForm = document.getElementById("new-book-form");
 
-function showNewBookForm(e) {
+function toggleNewBookForm(e) {
     if(newBookForm.style.display) newBookForm.style.display = "";
     else newBookForm.style.display = "block";
+}
+
+
+
+
+const newBookTitle = document.getElementById("title");
+const newBookAuthor = document.getElementById("author");
+const newBookPages = document.getElementById("pages");
+const newBookHasRead = document.getElementById("has-read-checkbox");
+
+const newBookSubmit = document.getElementById("submit");
+newBookSubmit.addEventListener('click', addBook);
+
+function addBook(e) {
+    toggleNewBookForm();
+
+    let title = newBookTitle.value;
+    let author = newBookAuthor.value;
+    let pages = newBookPages.value;
+    let hasRead = newBookHasRead.checked;
+
+    let book = new Book(title, author, pages, hasRead);
+    addBookToLibrary(book);
+
+    clearForm();
+}
+
+function clearForm() {
+    newBookTitle.value = "";
+    newBookAuthor.value = "";
+    newBookPages.value = "";
+    newBookHasRead.checked = false;
 }
