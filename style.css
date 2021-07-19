@@ -29,7 +29,8 @@ body {
 
 
 .book-display {
-    display: block;
+    display: flex;
+    flex-direction: column;
     word-wrap: break-word;
     padding: 0.5em;
     border: 0.05em black solid;
@@ -48,10 +49,12 @@ body {
     margin-bottom: 0.25em;
 }
 
+.book-display-author {
+    display: block;
+}
+
 .book-display-pages {
     font-weight: lighter;
-    display: block;
-    #float: right;
 }
 
 
@@ -133,4 +136,28 @@ body {
 
 #submit {
     width: 100% !important;
+}
+
+.book-display-delete {
+    background-color: rgb(4, 164, 228);
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    margin-left: auto;
+}
+
+.book-display-delete:hover {
+    background-color: rgb(3, 125, 173);
+    color: white;
+}
+
+.book-display-delete:active {
+    background-color: rgb(4, 164, 228);
+    color: black;
+}
+
+.book-display-actions-div {
+    display: flex;
+    position: relative;
+    margin-top: auto;
 }

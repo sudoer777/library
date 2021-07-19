@@ -22,29 +22,40 @@ function refreshBooksView() {
 
     let bookIndex = 0;
     myLibrary.forEach(book => {
-        let bookDisplay = document.createElement('div');
+        const bookDisplay = document.createElement('div');
         bookDisplay.classList.add("book-display");
-        
-        let bookDisplayTitle = document.createElement('span');
+
+
+        const bookDisplayInformation = document.createElement('div');
+        bookDisplayInformation.classList.add("book-display-information");
+        bookDisplay.appendChild(bookDisplayInformation);
+
+        const bookDisplayTitle = document.createElement('span');
         bookDisplayTitle.classList.add("book-display-title");
         bookDisplayTitle.textContent = book.title;
-        bookDisplay.appendChild(bookDisplayTitle);
+        bookDisplayInformation.appendChild(bookDisplayTitle);
 
-        let bookDisplayAuthor = document.createElement('span');
+        const bookDisplayAuthor = document.createElement('span');
         bookDisplayAuthor.classList.add("book-display-author");
         bookDisplayAuthor.textContent = book.author;
-        bookDisplay.appendChild(bookDisplayAuthor);
+        bookDisplayInformation.appendChild(bookDisplayAuthor);
 
-        let bookDisplayPages = document.createElement('span');
+        const bookDisplayPages = document.createElement('span');
         bookDisplayPages.classList.add("book-display-pages");
         bookDisplayPages.textContent = book.pages + (book.pages != 1?" pgs":" pg");
-        bookDisplay.appendChild(bookDisplayPages);
+        bookDisplayInformation.appendChild(bookDisplayPages);
 
-        let bookDisplayDelete = document.createElement('button');
+
+        const bookDisplayActionsDiv = document.createElement('div');
+        bookDisplayActionsDiv.classList.add('book-display-actions-div');
+        bookDisplay.appendChild(bookDisplayActionsDiv);
+
+        const bookDisplayDelete = document.createElement('button');
         bookDisplayDelete.classList.add("book-display-delete");
         bookDisplayDelete.textContent = "Delete";
         bookDisplayDelete.setAttribute('data-library-index', bookIndex);
-        bookDisplay.appendChild(bookDisplayDelete);
+        bookDisplayActionsDiv.appendChild(bookDisplayDelete);
+
 
         if(book.read) bookDisplay.classList.add("book-read");
 
