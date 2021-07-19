@@ -20,6 +20,7 @@ function addBookToLibrary(book) {
 function refreshBooksView() {
     booksView.innerHTML = "";
 
+    let bookIndex = 0;
     myLibrary.forEach(book => {
         let bookDisplay = document.createElement('div');
         bookDisplay.classList.add("book-display");
@@ -39,9 +40,17 @@ function refreshBooksView() {
         bookDisplayPages.textContent = book.pages + (book.pages != 1?" pgs":" pg");
         bookDisplay.appendChild(bookDisplayPages);
 
+        let bookDisplayDelete = document.createElement('button');
+        bookDisplayDelete.classList.add("book-display-delete");
+        bookDisplayDelete.textContent = "Delete";
+        bookDisplayDelete.setAttribute('data-library-index', bookIndex);
+        bookDisplay.appendChild(bookDisplayDelete);
+
         if(book.read) bookDisplay.classList.add("book-read");
 
         booksView.appendChild(bookDisplay);
+
+        bookIndex++;
     });
 }
 

@@ -50,7 +50,8 @@ body {
 
 .book-display-pages {
     font-weight: lighter;
-    float: right;
+    display: block;
+    #float: right;
 }
 
 
