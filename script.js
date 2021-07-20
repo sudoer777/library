@@ -54,6 +54,7 @@ function refreshBooksView() {
         bookDisplayDelete.classList.add("book-display-delete");
         bookDisplayDelete.textContent = "Delete";
         bookDisplayDelete.setAttribute('data-library-index', bookIndex);
+        bookDisplayDelete.addEventListener('click', deleteBook);
         bookDisplayActionsDiv.appendChild(bookDisplayDelete);
 
 
@@ -100,6 +101,11 @@ function addBook(e) {
     addBookToLibrary(book);
 
     clearForm();
+}
+
+function deleteBook (e) {
+    myLibrary.splice(this.getAttribute('data-library-index'),1);
+    refreshBooksView();
 }
 
 function clearForm() {
