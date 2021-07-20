@@ -33,9 +33,18 @@ body {
     flex-direction: column;
     word-wrap: break-word;
     padding: 0.5em;
-    border: 0.05em black solid;
+    border: 0.1em black solid;
     border-radius: 0.25em;
     background-color: whitesmoke;
+}
+
+.book-display:hover {
+    background-color: lightgray;
+    border-width: 0.1em;
+}
+
+.book-display:active {
+    background-color: white;
 }
 
 .book-read {
