@@ -23,6 +23,8 @@ function refreshBooksView() {
     let bookIndex = 0;
     myLibrary.forEach(book => {
         const bookDisplay = document.createElement('div');
+        bookDisplay.setAttribute('data-library-index', bookIndex);
+        bookDisplay.addEventListener('click', toggleReadStatus);
         bookDisplay.classList.add("book-display");
 
 
@@ -103,8 +105,15 @@ function addBook(e) {
     clearForm();
 }
 
-function deleteBook (e) {
-    myLibrary.splice(this.getAttribute('data-library-index'),1);
+function deleteBook(e) {
+    let bookIndex = this.getAttribute('data-library-index');
+    myLibrary.splice(bookIndex,1);
+    refreshBooksView();
+}
+
+function toggleReadStatus(e) {
+    let bookIndex = this.getAttribute('data-library-index');
+    myLibrary[bookIndex].read = !myLibrary[bookIndex].read;
     refreshBooksView();
 }
 
