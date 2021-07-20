@@ -109,6 +109,7 @@ function deleteBook(e) {
     let bookIndex = this.getAttribute('data-library-index');
     myLibrary.splice(bookIndex,1);
     refreshBooksView();
+    e.stopPropagation();
 }
 
 function toggleReadStatus(e) {
