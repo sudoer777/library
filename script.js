@@ -1,4 +1,5 @@
-let myLibrary = [];
+let myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
+if(!myLibrary) myLibrary = [];
 
 const booksView = document.getElementById("books-view");
 
@@ -18,6 +19,8 @@ function addBookToLibrary(book) {
 }
 
 function refreshBooksView() {
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+    
     booksView.innerHTML = "";
 
     let bookIndex = 0;
@@ -124,3 +127,7 @@ function clearForm() {
     newBookPages.value = "";
     newBookHasRead.checked = false;
 }
+
+
+
+refreshBooksView();
